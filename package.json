@@ -1,0 +1,23 @@
+{
+  "name": "html-to-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon --exec \"curl -X POST   http://localhost:3000/pdf   -H 'Content-Type: application/json'   --output file2.pdf -d '{ \"FirstName\": \"Tony\", \"LastName\": \"Mannino\", \"CompanyName\": \"ShareBuilder 401k\", \"PhoneNumber\": \"1 (800) 123-4567\" }'\" ./templates/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShareBuilder-401k/golang-html-to-pdf-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShareBuilder-401k/golang-html-to-pdf-template/issues"
+  },
+  "homepage": "https://github.com/ShareBuilder-401k/golang-html-to-pdf-template#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

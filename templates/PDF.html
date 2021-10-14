@@ -1,0 +1,170 @@
+{{define "PDF"}}
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div class="page cover">
+            <div class="wrapper">
+                <img src="{{ .AssetsDir }}/static/Logo.png" />
+                <div class="banner">
+                    <h1>{{ .CompanyName }} Official Document</h1>
+                    <p>Preseted to {{ .FullName }}</p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="page main">
+            <header>
+                <div class="box-row">
+                    <div class="title">
+                        <div class="company">{{ .CompanyName }} Official Document</div>
+                        <div class="presented">Preseted to {{ .FullName }}</div>
+                    </div> 
+                    <div class="contact">
+                        {{ .PhoneNumber }}
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                <h1>Here is your Invoice</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">#</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>PDF Tutorial</td>
+                            <td class="date">October 14, 2021</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Cool Golang Stuff</td>
+                            <td class="date">October 14, 2021</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Some other stuff</td>
+                            <td class="date">October 14, 2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer>
+                {{ .CompanySignature }}
+            </footer>
+        </div>
+    </body>
+    <style>
+    * { text-rendering: optimizeLegibility; }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    a { color: #00A0CF; }
+
+    table { 
+        border-collapse: collapse!important;
+        margin: 0.5rem auto;
+        width: 75%;
+        font-size: 14px;
+    }
+
+    .page {
+        page-break-after: always;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    br + .page {
+        margin-top: -1rem;
+    }
+
+    .page:last-of-type {
+        page-break-after: avoid;
+    }
+
+    /* --- Cover CSS --- */
+    .cover {
+        background: white;
+        height: 100vh;
+    }
+
+    .page .wrapper {
+        padding-top: 30rem;
+    }
+
+    .cover .banner {
+        font-family: monospace;
+        text-align: center;
+        padding: 2rem 0;
+        background: navy;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* --- Main CSS --- */
+    .main {}
+
+    .box-row {
+        display: -webkit-box;
+        justify-content: space-between;
+        width: 100%;
+        background-color: navy;
+        color: white;
+        padding: 0.5rem 0;
+    }
+
+    .title, .contact { width: 48%; }
+
+    .title {
+        padding-left: 1rem;
+    }
+
+    .company { font-size: 20px; font-weight: bold; }
+    .presented { padding-left: 2rem; }
+    .contact {
+        text-align: right;
+    }
+
+    .main h1 {
+         text-align: center;
+    }
+
+    .main table {
+        border-collapse: collapse;
+        border: 1px solid grey;
+    }
+
+    .main tbody tr:nth-child(odd) {
+        background-color: whitesmoke;
+    }
+
+    .main th {
+        padding: 0.5rem;
+    }
+
+    .main td {
+        padding: 2rem 0.5rem;
+    }
+
+    .date {
+        text-align: right;
+    }
+
+    footer {
+        margin-top: 55rem;
+        padding: 1rem 0 1rem 1rem;
+        color: white;
+        background-color: navy;
+    }
+    </style>
+</html>
+{{end}}
