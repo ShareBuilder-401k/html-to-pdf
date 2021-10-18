@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-This is an opinionated proof of concept for a dynamic PDF service written in Go and using [go-wkhtmltopdf](https://github.com/SebastiaanKlippert/go-wkhtmltopdf) and go'd built in html template system. For more information refer to [the companion blog post](https://engineering.sharebuilder401k.com/posts/go-html-to-pdf/).
+This is an opinionated base template project for a dynamic PDF API written in Go, using [go-wkhtmltopdf](https://github.com/SebastiaanKlippert/go-wkhtmltopdf) and go's built in html template system. For more information refer to [the companion blog post](https://engineering.sharebuilder401k.com/posts/go-html-to-pdf/).
 
 ## Contact
 
